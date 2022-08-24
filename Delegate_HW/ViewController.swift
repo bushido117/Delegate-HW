@@ -7,13 +7,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController, MyViewDelegate {
+    
+    
+    var myViewBackgroundColor: UIColor = .red
+    
+    
+
+    @IBOutlet weak var myView: MyView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        myView.delegate = self
+        
     }
-
+    
+    func buttonTap(_ sender: UIButton) {
+        print("Button was clicked in MyView")
+        myView.backgroundColor = myViewBackgroundColor
+    }
+    
 
 }
 

@@ -16,10 +16,8 @@ class MyView: UIView {
    
     weak var delegate: MyViewDelegate?
     
-    
     @IBAction func topButtonTap(_ sender: UIButton) {
         delegate?.buttonTap(sender)
+        backgroundColor = delegate?.myViewBackgroundColor
     }
-
-
 }
